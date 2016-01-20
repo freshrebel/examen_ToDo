@@ -1,13 +1,19 @@
 class TasksController < ApplicationController
   def index
-    @task = Task.index
+    @task = Task.new
   end
 
  def create
-   @task = Task.index(params)
+   @task = Task.new(params[:task])
+
+   @task.save
+   redirect_to @task
  end
   def filter
-    prior = params[:priority]
+    @tasks = Task.where(:priority => params[:priority])
+  end
 
+  def show
+    @task = Task.find(params[:priority])
   end
 end

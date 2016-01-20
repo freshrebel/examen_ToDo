@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :ingavedatum
       t.string :einddatum
-      t.int :prioriteit
+      t.integer :prioriteit
       t.string :beschrijving
       t.string :status
 
